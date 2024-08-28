@@ -631,7 +631,7 @@ if st.button("Run Backtest"):
             st.title("1minute Signals")
             st.write(combined_signals_1min)
             html_filename = 'backtest_plot.html'
-            bt.plot(plot_volume=True, plot_pl=True, filename=html_filename,plot_pl=False, open_browser=False)
+            bt.plot(plot_volume=True, filename=html_filename,plot_pl=False, open_browser=False)
 
 # Read the HTML file content
             with open(html_filename, 'r') as file:
@@ -669,7 +669,7 @@ if st.button("Run Backtest"):
             st.title("2minute Signals")
             st.write(combined_signals_2min)
             html_filename2 = 'backtest_plot2.html'
-            bt2.plot(plot_volume=True, plot_pl=True, filename=html_filename2,plot_pl=False, open_browser=False)
+            bt2.plot(plot_volume=True, plot_pl=False, filename=html_filename2, open_browser=False)
 
 # Read the HTML file content
             with open(html_filename, 'r') as file:
@@ -705,7 +705,7 @@ if st.button("Run Backtest"):
             st.title("5minute Signals")
             st.write(combined_signals_5min)
             html_filename5 = 'backtest_plot5.html'
-            bt5.plot(plot_volume=True, plot_pl=True, filename=html_filename5,plot_pl=False, open_browser=False)
+            bt5.plot(plot_volume=True, filename=html_filename5,plot_pl=False, open_browser=False)
 
 # Read the HTML file content
             with open(html_filename, 'r') as file:
