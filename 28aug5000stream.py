@@ -631,7 +631,7 @@ if st.button("Run Backtest"):
             st.title("1minute Signals")
             st.write(combined_signals_1min)
             html_filename = 'backtest_plot.html'
-            bt.plot(plot_volume=True, plot_pl=True, filename=html_filename, open_browser=False)
+            bt.plot(plot_volume=True, plot_pl=True, filename=html_filename,plot_pl=False, open_browser=False)
 
 # Read the HTML file content
             with open(html_filename, 'r') as file:
@@ -668,7 +668,15 @@ if st.button("Run Backtest"):
             st.write(trades2)
             st.title("2minute Signals")
             st.write(combined_signals_2min)
-            bt2.plot(plot_volume=False, plot_pl=False)
+            html_filename2 = 'backtest_plot2.html'
+            bt2.plot(plot_volume=True, plot_pl=True, filename=html_filename2,plot_pl=False, open_browser=False)
+
+# Read the HTML file content
+            with open(html_filename, 'r') as file:
+                html_content2 = file.read()
+
+# Display the HTML plot in Streamlit
+            st.components.v1.html(html_content2, height=600)
             
         # Run the backtest with optimization
             bt5 = Backtest(input_data_5min, MyStrategy5, cash=cashval)
@@ -696,7 +704,15 @@ if st.button("Run Backtest"):
             st.write(trades5)
             st.title("5minute Signals")
             st.write(combined_signals_5min)
-            bt5.plot(plot_volume=False, plot_pl=False)
+            html_filename5 = 'backtest_plot5.html'
+            bt5.plot(plot_volume=True, plot_pl=True, filename=html_filename5,plot_pl=False, open_browser=False)
+
+# Read the HTML file content
+            with open(html_filename, 'r') as file:
+                html_content5 = file.read()
+
+# Display the HTML plot in Streamlit
+            st.components.v1.html(html_content5, height=600)
         
 
 
