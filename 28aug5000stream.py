@@ -630,7 +630,15 @@ if st.button("Run Backtest"):
             st.write(trades)
             st.title("1minute Signals")
             st.write(combined_signals_1min)
-            bt.plot(plot_volume=False, plot_pl=False)
+            html_filename = 'backtest_plot.html'
+            bt.plot(plot_volume=True, plot_pl=True, filename=html_filename, open_browser=False)
+
+# Read the HTML file content
+            with open(html_filename, 'r') as file:
+                html_content = file.read()
+
+# Display the HTML plot in Streamlit
+            st.components.v1.html(html_content, height=600)
             
         
             bt2 = Backtest(input_data_2min, MyStrategy2, cash=cashval)
