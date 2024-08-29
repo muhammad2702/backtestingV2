@@ -801,11 +801,15 @@ if st.button("Run Model"):
         X_1min = StandardScaler().fit_transform(X_1min)
         X_2min = StandardScaler().fit_transform(X_2min)
         X_5min = StandardScaler().fit_transform(X_5min)
-    
+        
         X_1min_pca = PCA(n_components=0.95).fit_transform(X_1min)
         X_2min_pca = PCA(n_components=0.95).fit_transform(X_2min)
         X_5min_pca = PCA(n_components=0.95).fit_transform(X_5min)
-    
+        st.write(X_1min_pca)
+        st.write(X_2min_pca)
+        st.write(X_5min_pca)
+        
+        
         mab_pred_1min = model_1min_mab.predict(X_1min_pca)
         ssg_pred_1min = model_1min_ssg.predict(X_1min_pca)
         h_pred_1min = model_1min_h.predict(X_1min_pca)
