@@ -49,6 +49,11 @@ class DataFeeder:
         df = ts.as_pandas()
         df = df.reset_index()
         df.rename(columns={'datetime': 'date'}, inplace=True)
+        
+        # Sort the DataFrame by date in ascending order
+        df['date'] = pd.to_datetime(df['date'])  # Ensure date column is in datetime format
+        df.sort_values(by='date', inplace=True)  # Sort by date
+        
         return df
     
 class DataFeederML:
