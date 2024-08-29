@@ -617,7 +617,8 @@ if st.button("Run Backtest"):
             exit_bars = trades['ExitBar'].values
             exit_dates = data_feeder_1min.df.iloc[exit_bars]['date']
             trades['ExitDate'] = exit_dates.values
-            
+            print("nakhre")
+            print( data_feeder_1min.df )
             
             
             
